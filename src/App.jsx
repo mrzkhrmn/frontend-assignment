@@ -5,6 +5,7 @@ import { LoginPage } from "./pages/LoginPage";
 import { RestaurantDetail } from "./pages/RestaurantDetail";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
+import { MobileHeader } from "./components/MobileHeader";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         </Routes>
       </main>
       <Footer />
+      <MobileHeader />
     </div>
   );
 }
