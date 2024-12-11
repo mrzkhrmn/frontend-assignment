@@ -8,7 +8,7 @@ import phone from "../assets/phone.svg";
 import googlePlay from "../assets/googlePlay.svg";
 import appStore from "../assets/appStore.svg";
 
-export const HomePage = () => {
+export const HomePage = ({ setIsMenuOpen }) => {
   const [selectedCategory, setSelectedCategory] = useState("All");
 
   return (
@@ -37,15 +37,29 @@ export const HomePage = () => {
         <MembershipSection />
       </div>
       <div className="lg:max-w-7xl mx-auto mb-6 w-full lg:px-0 px-4">
-        <div className="flex items-center justify-between  mx-auto mb-6 lg:gap-16 gap-0">
+        <div className=" items-center justify-between hidden lg:flex  mx-auto mb-6 lg:gap-16 gap-0">
           <h1 className="text-[32px]">Dining</h1>
-          <select
-            onChange={(e) => setSelectedCategory(e.target.value)}
-            className="text-[#00A79D] border border-gray-400 py-2 px-1"
-          >
-            <option value="All">All</option>
-          </select>
+          <button className="w-10 h-10">
+            <img src="filter.png" alt="filter" className="w-full" />
+          </button>
         </div>
+        <div className=" items-center justify-between flex flex-col lg:hidden  mx-auto mb-6 lg:gap-16 gap-0">
+          <div className="flex items-center justify-between w-full p-2">
+            <button className="w-8 h-8">
+              <img src="location.png" alt="filter" className="w-full h-full" />
+            </button>
+            <h1 className="text-[26px]">Start exploring now!</h1>
+
+            <button
+              onClick={() => setIsMenuOpen((isMenuOpen) => !isMenuOpen)}
+              className="w-9 h-9"
+            >
+              <img src="filter.png" alt="filter" className="w-full h-full" />
+            </button>
+          </div>
+          <div className="h-[0.5px] bg-black w-full"></div>
+        </div>
+
         <div className="flex flex-wrap gap-x-10 lg:gap-y-8 gap-y-3 justify-between">
           <RestraurantCard img={"restoran1.png"} name={"Restaurant 1"} />
           <RestraurantCard img={"restoran2.png"} name={"Restaurant 2"} />
@@ -95,7 +109,7 @@ export const HomePage = () => {
         <div className="flex items-center justify-between max-w-7xl mx-auto mb-6">
           <h1 className="text-2xl">Tourist Attractions</h1>
           <button className="text-[#00A79D]">
-            <MdFilterList size={35} />
+            <img src="filter.png" alt="" />
           </button>
         </div>
         <div className="flex flex-wrap gap-x-10 lg:gap-y-8 gap-y-3 justify-between">

@@ -4,10 +4,8 @@ import { MdOutlineClose } from "react-icons/md";
 import { FaHeart, FaCheck } from "react-icons/fa";
 import { GoSearch } from "react-icons/go";
 import { IoFolderOutline } from "react-icons/io5";
-import { useState } from "react";
 
-export const MobileHeader = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+export const MobileHeader = ({ isMenuOpen, setIsMenuOpen }) => {
   return (
     <header className="w-full h-[80px] fixed lg:hidden bottom-0 py-4 bg-[#00A79D] mt-auto shadow-lg z-[999]">
       <button
